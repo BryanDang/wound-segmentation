@@ -1,0 +1,15 @@
+{
+  "id": "bkdkaggle/focal-tversky-diagnostic-test",
+  "title": "Focal Tversky Diagnostic Test",
+  "code_file": "ablation_1_diagnostic.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [
+    "bkdkaggle/wound-seg-code-v1",
+    "bkdkaggle/tiny-wound-seg-smoke-test"
+  ],
+  "kernel_sources": []
+}

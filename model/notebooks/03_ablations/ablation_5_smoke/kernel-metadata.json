@@ -1,0 +1,14 @@
+{
+  "id": "bkdkaggle/ablation-5-label-smoothing-smoke-test",
+  "title": "Ablation 5: Label Smoothing - Smoke Test",
+  "code_file": "ablation_5_smoke_test.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs"
+  ],
+  "kernel_sources": []
+}

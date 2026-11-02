@@ -1,0 +1,22 @@
+{
+  "notebook": "ablation_3_counterfactual_no_augment",
+  "ablation": "multiscale_no_augment",
+  "status": "complete",
+  "phases_complete": [
+    "training",
+    "evaluation"
+  ],
+  "n_images_evaluated": 552,
+  "n_seeds": 3,
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "dice_mean": 0.6481586348062315,
+  "baseline_dice_mean": 0.8,
+  "dice_improvement_vs_baseline": -0.15184136519376856,
+  "augmentations": "all_disabled",
+  "multi_scale": "enabled",
+  "environment": "Kaggle"
+}

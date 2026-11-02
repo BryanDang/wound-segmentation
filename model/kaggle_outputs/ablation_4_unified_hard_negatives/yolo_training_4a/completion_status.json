@@ -1,0 +1,73 @@
+{
+  "ablation": "4_hard_negatives",
+  "status": "complete",
+  "strategies": [
+    "4a_mixed",
+    "4b_best_finetune",
+    "4c_last_finetune"
+  ],
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "results": {
+    "4a_seed_42": {
+      "strategy": "4a_mixed",
+      "seed": 42,
+      "duration_min": 59.5,
+      "best_model": "/kaggle/working/yolo_training_4a/seed_42/weights/best.pt",
+      "last_model": "/kaggle/working/yolo_training_4a/seed_42/weights/last.pt"
+    },
+    "4a_seed_123": {
+      "strategy": "4a_mixed",
+      "seed": 123,
+      "duration_min": 48.4,
+      "best_model": "/kaggle/working/yolo_training_4a/seed_123/weights/best.pt",
+      "last_model": "/kaggle/working/yolo_training_4a/seed_123/weights/last.pt"
+    },
+    "4a_seed_456": {
+      "strategy": "4a_mixed",
+      "seed": 456,
+      "duration_min": 60.1,
+      "best_model": "/kaggle/working/yolo_training_4a/seed_456/weights/best.pt",
+      "last_model": "/kaggle/working/yolo_training_4a/seed_456/weights/last.pt"
+    },
+    "4b_seed_42": {
+      "strategy": "4b_best_finetune",
+      "seed": 42,
+      "duration_min": 2.4,
+      "base_model": "/kaggle/working/yolo_training_4a/seed_42/weights/best.pt"
+    },
+    "4b_seed_123": {
+      "strategy": "4b_best_finetune",
+      "seed": 123,
+      "duration_min": 2.4,
+      "base_model": "/kaggle/working/yolo_training_4a/seed_123/weights/best.pt"
+    },
+    "4b_seed_456": {
+      "strategy": "4b_best_finetune",
+      "seed": 456,
+      "duration_min": 2.3,
+      "base_model": "/kaggle/working/yolo_training_4a/seed_456/weights/best.pt"
+    },
+    "4c_seed_42": {
+      "strategy": "4c_last_finetune",
+      "seed": 42,
+      "duration_min": 2.3,
+      "base_model": "/kaggle/working/yolo_training_4a/seed_42/weights/last.pt"
+    },
+    "4c_seed_123": {
+      "strategy": "4c_last_finetune",
+      "seed": 123,
+      "duration_min": 2.3,
+      "base_model": "/kaggle/working/yolo_training_4a/seed_123/weights/last.pt"
+    },
+    "4c_seed_456": {
+      "strategy": "4c_last_finetune",
+      "seed": 456,
+      "duration_min": 2.3,
+      "base_model": "/kaggle/working/yolo_training_4a/seed_456/weights/last.pt"
+    }
+  }
+}

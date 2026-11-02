@@ -1,0 +1,16 @@
+{
+  "id": "bkdkaggle/ablation-4c-early-checkpoint",
+  "title": "Ablation 4c Early Checkpoint",
+  "code_file": "ablation_4c_early_checkpoint_clean.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/ddi-diverse-dermatology",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "kernel_sources": []
+}

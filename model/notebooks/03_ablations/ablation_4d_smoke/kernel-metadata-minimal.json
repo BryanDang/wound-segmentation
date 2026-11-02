@@ -1,0 +1,16 @@
+{
+  "id": "bkdkaggle/ablation-4d-minimal-smoke",
+  "title": "Ablation 4d: Minimal Smoke Test (2-3 min)",
+  "code_file": "ablation_4d_minimal_smoke.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/ddi-diverse-dermatology"
+  ],
+  "kernel_sources": [],
+  "competition_sources": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": "bkdkaggle/ablation-2-counterfactual-production",
+  "title": "Ablation 2 Counterfactual Production",
+  "code_file": "ablation_2_counterfactual_production.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

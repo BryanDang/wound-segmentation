@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="light-content">
+    <meta name="theme-color" content="#007AFF">
+    <title>Wound Monitor</title>
+    <script src="vendor/tf.min.js"></script>
+    <script src="vendor/ort.wasm.min.js"></script>
+    <script src="vendor/jsQR.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        :root {
+            --ios-blue: #007AFF;
+            --ios-green: #34C759;
+            --ios-red: #FF3B30;
+            --ios-yellow: #FFCC00;
+            --ios-gray: #8E8E93;
+            --ios-light-gray: #C7C7CC;
+            --ios-background: #F2F2F7;
+            --ios-secondary-background: #FFFFFF;
+            --ios-tertiary-background: #F2F2F7;
+            --ios-separator: rgba(60, 60, 67, 0.12);
+            --ios-text: #000000;
+            --ios-secondary-text: #3C3C43;
+            --ios-tertiary-text: #C7C7CC;
+            --safe-area-top: env(safe-area-inset-top);
+            --safe-area-bottom: env(safe-area-inset-bottom);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --ios-background: #000000;
+                --ios-secondary-background: #1C1C1E;
+                --ios-tertiary-background: #2C2C2E;
+                --ios-separator: rgba(84, 84, 88, 0.65);
+                --ios-text: #FFFFFF;
+                --ios-secondary-text: #8E8E93;
+                --ios-tertiary-text: #48484A;
+            }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: var(--ios-background);
+            color: var(--ios-text);
+            font-size: 17px;
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        
+        /* iOS Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 44px;
+            background: var(--ios-secondary-background);
+            border-bottom: 0.5px solid var(--ios-separator);
+            z-index: 1000;
+            padding-top: var(--safe-area-top);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        
+        .nav-content {
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0 16px;
+        }
+        
+        .nav-title {
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: -0.022em;
+        }
+        
+        .nav-button {
+            position: absolute;
+            right: 16px;
+            color: var(--ios-blue);
+            font-size: 17px;
+            font-weight: 400;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .nav-button:active {
+            opacity: 0.6;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding-top: calc(44px + var(--safe-area-top));
+            padding-bottom: calc(20px + var(--safe-area-bottom));
+            min-height: 100vh;
+        }
+        
+        /* iOS Cards */
+        .ios-card {
+            background: var(--ios-secondary-background);
+            margin: 16px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0.5px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ios-card-header {
+            padding: 16px;
+            border-bottom: 0.5px solid var(--ios-separator);
+        }
+        
+        .ios-card-title {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.38px;
+            margin-bottom: 4px;
+        }
+        
+        .ios-card-subtitle {
+            font-size: 13px;
+            color: var(--ios-secondary-text);
+            letter-spacing: -0.08px;
+        }
+        
+        .ios-card-content {
+            padding: 16px;
+        }
+        
+        /* Camera View */
+        .camera-container {
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 16px;
+            aspect-ratio: 4/3;
+        }
+        
+        #cameraVideo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+        
+        #overlayCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            display: none;
+        }
+        
+        .camera-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            flex-direction: column;
+            color: #8E8E93;
+        }
+        
+        .camera-icon {
+            font-size: 20px;
+            margin-bottom: 16px;
+            opacity: 0.3;
+        }
+        
+        /* iOS Form Elements */
+        .ios-form-group {
+            margin-bottom: 20px;
+        }
+        
+        .ios-label {
+            display: block;
+            font-size: 13px;
+            color: var(--ios-secondary-text);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: -0.08px;
+        }
+        
+        .ios-input {
+            width: 100%;
+            height: 44px;
+            background: var(--ios-tertiary-background);
+            border: none;
+            border-radius: 10px;
+            padding: 0 16px;
+            font-size: 17px;
+            color: var(--ios-text);
+            -webkit-appearance: none;
+            outline: none;
+        }
+        
+        .ios-input:focus {
+            background: var(--ios-separator);
+        }
+        
+        /* iOS Buttons */
+        .ios-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            background: var(--ios-blue);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: -0.022em;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: opacity 0.2s;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+        
+        .ios-button:active {
+            opacity: 0.8;
+        }
+        
+        .ios-button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        
+        .ios-button.secondary {
+            background: var(--ios-tertiary-background);
+            color: var(--ios-blue);
+        }
+        
+        .ios-button.success {
+            background: var(--ios-green);
+        }
+        
+        .ios-button.danger {
+            background: var(--ios-red);
+        }
+        
+        /* iOS List */
+        .ios-list {
+            background: var(--ios-secondary-background);
+            border-radius: 10px;
+            margin: 16px;
+            overflow: hidden;
+        }
+        
+        .ios-list-item {
+            padding: 16px;
+            border-bottom: 0.5px solid var(--ios-separator);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 44px;
+        }
+        
+        .ios-list-item:last-child {
+            border-bottom: none;
+        }
+        
+        .ios-list-item-content {
+            flex: 1;
+        }
+        
+        .ios-list-item-title {
+            font-size: 17px;
+            margin-bottom: 2px;
+        }
+        
+        .ios-list-item-subtitle {
+            font-size: 13px;
+            color: var(--ios-secondary-text);
+        }
+        
+        .ios-list-item-value {
+            font-size: 17px;
+            color: var(--ios-blue);
+            font-weight: 500;
+        }
+        
+        /* Status Badge */
+        .status-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05px;
+        }
+        
+        .status-badge.improving {
+            background: rgba(52, 199, 89, 0.15);
+            color: var(--ios-green);
+        }
+        
+        .status-badge.stable {
+            background: rgba(255, 204, 0, 0.15);
+            color: var(--ios-yellow);
+        }
+        
+        .status-badge.concerning {
+            background: rgba(255, 59, 48, 0.15);
+            color: var(--ios-red);
+        }
+        
+        /* Progress Timeline */
+        .timeline {
+            padding: 0;
+        }
+        
+        .timeline-item {
+            padding: 16px;
+            border-left: 2px solid var(--ios-separator);
+            margin-left: 16px;
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 20px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--ios-blue);
+            border: 2px solid var(--ios-secondary-background);
+        }
+        
+        .timeline-date {
+            font-size: 13px;
+            color: var(--ios-secondary-text);
+            margin-bottom: 4px;
+        }
+        
+        .timeline-content {
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Alert */
+        .ios-alert {
+            position: fixed;
+            top: calc(44px + var(--safe-area-top) + 16px);
+            left: 16px;
+            right: 16px;
+            background: var(--ios-secondary-background);
+            border-radius: 14px;
+            padding: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 2000;
+            transform: translateY(-100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .ios-alert.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .ios-alert-title {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .ios-alert-message {
+            font-size: 13px;
+            color: var(--ios-secondary-text);
+        }
+        
+        .ios-alert.success .ios-alert-title {
+            color: var(--ios-green);
+        }
+        
+        .ios-alert.error .ios-alert-title {
+            color: var(--ios-red);
+        }
+        
+        .ios-alert.warning .ios-alert-title {
+            color: var(--ios-yellow);
+        }
+        
+        /* Tab Bar */
+        .tab-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 49px;
+            background: var(--ios-secondary-background);
+            border-top: 0.5px solid var(--ios-separator);
+            display: flex;
+            padding-bottom: var(--safe-area-bottom);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        
+        .tab-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 49px;
+            color: var(--ios-gray);
+            font-size: 10px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .tab-item.active {
+            color: var(--ios-blue);
+        }
+        
+        .tab-icon {
+            font-size: 24px;
+            margin-bottom: 2px;
+        }
+        
+        /* Sections */
+        .section {
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        /* Recommendations */
+        .recommendation-card {
+            background: var(--ios-tertiary-background);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        
+        .recommendation-title {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--ios-green);
+        }
+        
+        .recommendation-text {
+            font-size: 15px;
+            color: var(--ios-secondary-text);
+            line-height: 1.4;
+        }
+        
+        /* Loading Spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--ios-separator);
+            border-top-color: var(--ios-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 375px) {
+            body {
+                font-size: 16px;
+            }
+            
+            .ios-card {
+                margin: 12px;
+            }
+            
+            .ios-card-title {
+                font-size: 18px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .main-content {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <div class="nav-content">
+            <div class="nav-title">Wound Monitor</div>
+            <button class="nav-button" onclick="showSettings()">Settings</button>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content" style="padding-bottom: calc(49px + var(--safe-area-bottom));">
+        <!-- Scan Section -->
+        <div id="scanSection" class="section active">
+            <!-- Patient Info Card -->
+            <div class="ios-card">
+                <div class="ios-card-header">
+                    <div class="ios-card-title">Patient Information</div>
+                    <div class="ios-card-subtitle">Enter your details to begin tracking</div>
+                </div>
+                <div class="ios-card-content">
+                    <div class="ios-form-group">
+                        <label class="ios-label">Your Name</label>
+                        <input type="text" id="patientName" class="ios-input" placeholder="Enter your name" autocomplete="name">
+                    </div>
+                    <div class="ios-form-group">
+                        <label class="ios-label">Wound Location</label>
+                        <select id="woundLocation" class="ios-input">
+                            <option value="">Select location</option>
+                            <option value="arm">Arm</option>
+                            <option value="leg">Leg</option>
+                            <option value="hand">Hand</option>
+                            <option value="foot">Foot</option>
+                            <option value="chest">Chest</option>
+                            <option value="back">Back</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="ios-form-group">
+                        <label class="ios-label">Healthcare Provider</label>
+                        <input type="text" id="providerName" class="ios-input" value="Dr. Jane Smith" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Camera Card -->
+            <div class="ios-card">
+                <div class="ios-card-header">
+                    <div class="ios-card-title">Wound Scan</div>
+                    <div class="ios-card-subtitle">Position QR code next to wound for calibration</div>
+                </div>
+                <div class="ios-card-content">
+                    <div class="camera-container">
+                        <video id="cameraVideo" autoplay playsinline muted></video>
+                        <canvas id="overlayCanvas"></canvas>
+                        <img id="uploadedImage" style="display: none; width: 100%; height: 100%; object-fit: cover;">
+                        <div class="camera-placeholder" id="cameraPlaceholder">
+                            <div class="camera-icon">Camera</div>
+                            <div>Take photo with camera or upload existing image</div>
+                        </div>
+                    </div>
+                    
+                    <button class="ios-button" id="startCameraBtn">
+                        Use Camera
+                    </button>
+                    <button class="ios-button secondary" id="uploadBtn">
+                        Upload Image
+                    </button>
+                    <button class="ios-button success" id="captureBtn" disabled>
+                        Analyze Wound
+                    </button>
+                    <button class="ios-button secondary" id="stopCameraBtn" disabled>
+                        Stop Camera
+                    </button>
+                    
+                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                </div>
+            </div>
+            
+            <!-- Measurement Display -->
+            <div class="ios-list" id="measurementDisplay" style="display: none;">
+                <div class="ios-list-item">
+                    <div class="ios-list-item-content">
+                        <div class="ios-list-item-title">Wound Area</div>
+                    </div>
+                    <div class="ios-list-item-value" id="woundArea">-- cm²</div>
+                </div>
+                <div class="ios-list-item">
+                    <div class="ios-list-item-content">
+                        <div class="ios-list-item-title">Wound Perimeter</div>
+                    </div>
+                    <div class="ios-list-item-value" id="woundPerimeter">-- cm</div>
+                </div>
+                <div class="ios-list-item">
+                    <div class="ios-list-item-content">
+                        <div class="ios-list-item-title">QR Code Detected</div>
+                    </div>
+                    <div class="ios-list-item-value" id="qrStatus">No</div>
+                </div>
+                <div class="ios-list-item">
+                    <div class="ios-list-item-content">
+                        <div class="ios-list-item-title">Calibration Scale</div>
+                    </div>
+                    <div class="ios-list-item-value" id="calibrationScale">-- px/cm</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Progress Section -->
+        <div id="progressSection" class="section">
+            <div class="ios-card">
+                <div class="ios-card-header">
+                    <div class="ios-card-title">Healing Progress</div>
+                    <div class="ios-card-subtitle">Track wound healing over time</div>
+                </div>
+                <div class="ios-card-content">
+                    <div class="timeline" id="progressTimeline">
+                        <div style="text-align: center; color: var(--ios-secondary-text); padding: 32px;">
+                            No scans recorded yet
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recommendations Section -->
+        <div id="recommendationsSection" class="section">
+            <div class="ios-card">
+                <div class="ios-card-header">
+                    <div class="ios-card-title">Treatment Recommendations</div>
+                    <div class="ios-card-subtitle">Based on wound progression</div>
+                </div>
+                <div class="ios-card-content" id="recommendationsContent">
+                    <div class="recommendation-card">
+                        <div class="recommendation-title">Daily Care</div>
+                        <div class="recommendation-text">
+                            Continue gentle cleaning with saline solution and apply prescribed dressing.
+                        </div>
+                    </div>
+                    <div class="recommendation-card">
+                        <div class="recommendation-title">Monitor Signs</div>
+                        <div class="recommendation-text">
+                            Watch for increased redness, swelling, warmth, or unusual discharge.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+        <div class="tab-item active" onclick="switchTab('scan')">
+            <div class="tab-icon">&#9679;</div>
+            <div>Scan</div>
+        </div>
+        <div class="tab-item" onclick="switchTab('progress')">
+            <div class="tab-icon">&#9679;</div>
+            <div>Progress</div>
+        </div>
+        <div class="tab-item" onclick="switchTab('recommendations')">
+            <div class="tab-icon">&#9679;</div>
+            <div>Treatment</div>
+        </div>
+    </div>
+    
+    <!-- Alerts Container -->
+    <div id="alertContainer"></div>
+    
+    <script src="ios-camera.js"></script>
+</body>
+</html>

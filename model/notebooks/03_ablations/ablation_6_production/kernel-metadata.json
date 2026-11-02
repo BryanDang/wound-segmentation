@@ -1,0 +1,16 @@
+{
+  "id": "bkdkaggle/ablation-6-tta",
+  "title": "Ablation 6: Test-Time Augmentation (TTA)",
+  "code_file": "ablation_6_tta.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "kernel_sources": [],
+  "competition_sources": []
+}

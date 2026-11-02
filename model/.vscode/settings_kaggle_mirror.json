@@ -1,0 +1,46 @@
+{
+    "python.defaultInterpreterPath": "./kaggle_env/bin/python",
+    "jupyter.kernels.filter": [
+        {
+            "path": "./kaggle_env/bin/python",
+            "type": "pythonEnvironment"
+        }
+    ],
+    "python.terminal.activateEnvironment": true,
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=100",
+        "--ignore=E501,W503,E402"
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length=100"
+    ],
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/kaggle_env": false,
+        "**/smoke_test_output": true
+    },
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}"
+    ],
+    "python.envFile": "${workspaceFolder}/.env",
+    "jupyter.jupyterServerType": "local",
+    "jupyter.allowUnauthorizedRemoteConnection": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "notebook.lineNumbers": "on",
+    "editor.formatOnSave": false,
+    "notebook.formatOnSave.enabled": false,
+    "[python]": {
+        "editor.formatOnSave": false
+    },
+    "[jupyter]": {
+        "editor.formatOnSave": false
+    }
+}

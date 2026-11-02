@@ -1,0 +1,15 @@
+{
+  "id": "bkdkaggle/wound-segmentation-eda-pipeline",
+  "title": "Wound Segmentation EDA Pipeline",
+  "code_file": "01_eda_and_analysis_clean.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [
+    "leoscode/wound-segmentation-images",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "kernel_sources": []
+}

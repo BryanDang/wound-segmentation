@@ -1,0 +1,19 @@
+{
+  "id": "bkdkaggle/ablation-3-counterfactual-production",
+  "title": "Ablation 3 Counterfactual Production",
+  "code_file": "ablation_3_counterfactual_production.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "keywords": [
+    "yolov8",
+    "production",
+    "ablation"
+  ]
+}

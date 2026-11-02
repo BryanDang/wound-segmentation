@@ -1,0 +1,14 @@
+{
+  "notebook": "02_baseline_model",
+  "status": "in_progress",
+  "phases_complete": [
+    "zero_shot"
+  ],
+  "phases_remaining": [
+    "fine_tuned"
+  ],
+  "phase_1_timestamp": "2025-10-15T06:07:20.707929",
+  "n_images_evaluated": 552,
+  "zero_shot_dice_mean": 0.04870318421240146,
+  "environment": "Kaggle"
+}

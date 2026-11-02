@@ -1,0 +1,7 @@
+{
+  "notebook": "02_baseline_model",
+  "status": "complete",
+  "n_images_evaluated": 552,
+  "zero_shot_dice_mean": 0.04870318421240146,
+  "environment": "Kaggle"
+}

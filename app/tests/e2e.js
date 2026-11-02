@@ -1,0 +1,24 @@
+const {chromium}=require('playwright');const fs=require('fs');
+const [,, img, shotPrefix, maskOut]=process.argv;
+(async()=>{const b=await chromium.launch();
+const ctx=await b.newContext({viewport:{width:430,height:1000}});const p=await ctx.newPage();
+const ext=[];
+p.on('console',m=>console.log('console.'+m.type()+':',m.text()));
+p.on('pageerror',e=>console.log('PAGEERROR:',e.message));
+p.on('request',r=>{if(!r.url().startsWith('http://localhost:8123'))ext.push(r.url())});
+await p.goto('http://localhost:8123/index.html');
+await p.waitForFunction(()=>typeof isModelLoaded!=='undefined'&&isModelLoaded,{timeout:60000}).catch(()=>console.log('MODEL NOT LOADED'));
+await p.fill('#patientName','Test');await p.selectOption('#woundLocation','arm');
+await p.setInputFiles('#imageUpload',img);
+await p.waitForFunction(()=>{const i=document.getElementById('uploadedImage');return i.complete&&i.naturalWidth>0});
+await p.evaluate(()=>{const o=window.showWoundSegmentationOverlay;window.showWoundSegmentationOverlay=async(m,c)=>{window.__mask=Array.from(await m.data());window.__dim=[c.width,c.height];return o(m,c)}});
+if(shotPrefix)await p.screenshot({path:shotPrefix+'-before.png'});
+await p.click('#captureBtn');
+await p.waitForFunction(()=>window.__mask,{timeout:60000});
+await p.waitForTimeout(800);
+const r=await p.evaluate(()=>({area:document.getElementById('woundArea').textContent,per:document.getElementById('woundPerimeter').textContent,px:window.__mask.reduce((a,v)=>a+(v>0.5),0),dim:window.__dim,cal:!!window.currentCalibration,pcm:window.currentCalibration&&window.currentCalibration.pixelsPerCm}));
+console.log('RESULT',JSON.stringify(r));
+if(shotPrefix)await p.screenshot({path:shotPrefix+'-after.png'});
+if(maskOut){const m=await p.evaluate(()=>window.__mask.map(v=>v>0.5?1:0));fs.writeFileSync(maskOut,Buffer.from(m))}
+console.log('EXTERNAL REQUESTS:',JSON.stringify(ext));
+await b.close()})();

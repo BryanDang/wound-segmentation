@@ -1,0 +1,23 @@
+{
+  "id": "bkdkaggle/ablation-3-counterfactual-multiscale-no-augment",
+  "title": "Ablation 3 Counterfactual MultiScale No Augment",
+  "code_file": "ablation_3_counterfactual_no_augment.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [
+    "yolov8",
+    "wound-segmentation",
+    "ablation-study",
+    "multi-scale"
+  ],
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "kernel_sources": [],
+  "competition_sources": []
+}

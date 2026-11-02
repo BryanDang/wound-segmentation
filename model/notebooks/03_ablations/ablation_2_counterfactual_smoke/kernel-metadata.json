@@ -1,0 +1,17 @@
+{
+  "id": "bkdkaggle/ablation-2-counterfactual-smoke",
+  "title": "Ablation 2 Counterfactual Smoke",
+  "code_file": "ablation_2_counterfactual_smoke.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "bkdkaggle/tiny-wound-seg-smoke-test",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

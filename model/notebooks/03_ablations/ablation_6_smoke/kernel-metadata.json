@@ -1,0 +1,16 @@
+{
+  "id": "bkdkaggle/ablation-6-tta-smoke-test",
+  "title": "Ablation 6: TTA - Smoke Test",
+  "code_file": "ablation_6_tta_smoke_test.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/wound-seg-code-v1",
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/tiny-wound-seg-smoke-test"
+  ],
+  "kernel_sources": []
+}

@@ -1,0 +1,27 @@
+{
+  "notebook": "ablation_1_diagnostic",
+  "training_success": true,
+  "training_time_seconds": 48.88311982154846,
+  "configuration": {
+    "loss_function": "FocalTverskyLoss",
+    "alpha": 0.7,
+    "beta": 0.3,
+    "gamma": 2.0,
+    "epochs": 5,
+    "batch_size": 2,
+    "image_size": 512,
+    "n_training_images": 3,
+    "seed": 42
+  },
+  "environment": {
+    "pytorch_version": "Kaggle default",
+    "cuda_available": false,
+    "device": "cpu"
+  },
+  "metrics": {
+    "initial_loss": 1.74782,
+    "final_loss": 2.36475,
+    "loss_reduction_percent": -35.29711297502031,
+    "epochs_completed": 5
+  }
+}

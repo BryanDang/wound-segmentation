@@ -1,0 +1,19 @@
+{
+  "notebook": "ablation_3_counterfactual_smoke",
+  "status": "complete",
+  "timestamp": "2025-10-22T04:35:46.893178",
+  "seed": 42,
+  "configuration": {
+    "intervention": "Single-scale (512) + RandAugment",
+    "imgsz": 512,
+    "auto_augment": "randaugment",
+    "epochs": 10,
+    "patience": 5,
+    "batch": 32,
+    "lr0": 0.015,
+    "workers": 8,
+    "amp": false,
+    "dataset": "tiny-wound-seg-smoke-test"
+  },
+  "best_model": "/kaggle/working/ablation_3_counterfactual_smoke/yolo_training/seed_42/weights/best.pt"
+}

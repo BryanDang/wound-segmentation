@@ -1,0 +1,15 @@
+{
+  "id": "bkdkaggle/ablation-2-clinical-augmentation",
+  "title": "Ablation 2 Clinical Augmentation",
+  "code_file": "ablation_2_clinical_augmentation_clean.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "kernel_sources": []
+}

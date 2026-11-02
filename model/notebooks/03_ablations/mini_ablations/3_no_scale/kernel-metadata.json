@@ -1,0 +1,16 @@
+{
+  "id": "bkdkaggle/mini-ablation-3-no-scale-smoke-test",
+  "title": "Mini-Ablation 3: No Scale - Smoke Test (CPU)",
+  "code_file": "3_no_scale_smoke_test.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/wound-seg-code-v1",
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/tiny-wound-seg-smoke-test"
+  ],
+  "kernel_sources": []
+}

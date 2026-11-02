@@ -1,0 +1,20 @@
+{
+  "notebook": "ablation_1_focal_tversky",
+  "ablation": "focal_tversky_loss",
+  "status": "complete",
+  "phases_complete": [
+    "training",
+    "evaluation"
+  ],
+  "n_images_evaluated": 552,
+  "n_seeds": 3,
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "ablation_dice_mean": 0.8000502968855494,
+  "baseline_dice_mean": 0.8,
+  "dice_improvement_vs_baseline": 5.029688554936129e-05,
+  "environment": "Kaggle"
+}

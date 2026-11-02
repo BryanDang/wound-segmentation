@@ -1,0 +1,42 @@
+{
+  "total_tests": 7,
+  "passed_tests": 7,
+  "failed_tests": 0,
+  "pass_rate_percent": 100.0,
+  "failed_test_names": [],
+  "environment": {
+    "pytorch_version": "2.6.0+cu124",
+    "cuda_available": false,
+    "platform": "kaggle"
+  },
+  "test_results": {
+    "test_perfect_prediction": {
+      "status": "PASS",
+      "loss": 0.0
+    },
+    "test_worst_prediction": {
+      "status": "PASS",
+      "loss": 1.0
+    },
+    "test_tversky_index_calculation": {
+      "status": "PASS",
+      "loss": 0.5
+    },
+    "test_parameter_validation": {
+      "status": "PASS"
+    },
+    "test_gradient_flow": {
+      "status": "PASS",
+      "max_grad": 0.011969836428761482
+    },
+    "test_asymmetric_weighting": {
+      "status": "PASS",
+      "loss_fn": 0.25925928354263306,
+      "loss_fp": 0.13043475151062012
+    },
+    "test_yolo_compatibility": {
+      "status": "PASS",
+      "loss": 0.2500424385070801
+    }
+  }
+}

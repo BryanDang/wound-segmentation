@@ -1,0 +1,10 @@
+Browser libraries served locally. No CDN is used at run time.
+
+tf.min.js              TensorFlow.js 4.11.0        Apache-2.0
+jsQR.js                jsQR 1.4.0                  Apache-2.0
+ort.wasm.min.js        onnxruntime-web 1.20.1      MIT
+ort-wasm-simd-threaded.mjs, ort-wasm-simd-threaded.wasm
+                       onnxruntime-web 1.20.1      MIT
+                       (loaded by ort.wasm.min.js; run with one thread)
+
+Copied unchanged from the npm packages of the same name and version.

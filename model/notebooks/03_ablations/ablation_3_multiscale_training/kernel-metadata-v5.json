@@ -1,0 +1,15 @@
+{
+  "id": "bkdkaggle/ablation-3-v5-multiscale-no-randaugment",
+  "title": "Ablation 3 v5: Multi-Scale (No RandAugment)",
+  "code_file": "ablation_3_v5_multiscale_no_randaugment_clean.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "kernel_sources": []
+}

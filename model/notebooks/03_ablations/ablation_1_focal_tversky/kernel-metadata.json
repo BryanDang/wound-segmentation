@@ -1,0 +1,15 @@
+{
+  "id": "bkdkaggle/ablation-1-focal-tversky-loss",
+  "title": "Ablation 1: Focal Tversky Loss",
+  "code_file": "ablation_1_focal_tversky.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "kernel_sources": []
+}

@@ -1,0 +1,16 @@
+{
+  "baseline_dice": 0.8,
+  "strategies": {
+    "4a": {
+      "name": "Strategy 4a (Mixed - Full Training on Combined Dataset)",
+      "mean_map50": 0.8743333333333334,
+      "std_map50": 0.0035118845842842493,
+      "individual_results": [
+        0.878,
+        0.871,
+        0.874
+      ],
+      "improvement_vs_baseline": 7.433333333333336
+    }
+  }
+}

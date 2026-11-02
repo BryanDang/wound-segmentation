@@ -1,0 +1,17 @@
+# YOLOv8 Dataset Configuration for Wound Segmentation
+# This file will be copied to /kaggle/working/ during notebook execution
+
+# Dataset root path (will be set dynamically in notebook)
+path: /kaggle/working/data_wound_seg
+
+# Image directories (relative to path)
+train: train_images
+val: test_images  # Using test set as validation (no separate val split)
+test: test_images
+
+# Class definitions
+names:
+  0: wound
+
+# Dataset metadata
+nc: 1  # number of classes

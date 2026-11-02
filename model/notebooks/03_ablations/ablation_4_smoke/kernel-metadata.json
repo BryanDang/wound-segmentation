@@ -1,0 +1,15 @@
+{
+  "id": "bkdkaggle/ablation-4-smoke-test",
+  "title": "Ablation 4 Smoke Test - DDI Loading",
+  "code_file": "ablation_4_smoke_test.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/ddi-diverse-dermatology"
+  ],
+  "kernel_sources": []
+}

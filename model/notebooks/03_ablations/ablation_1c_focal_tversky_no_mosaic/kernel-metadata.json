@@ -1,0 +1,16 @@
+{
+  "id": "bkdkaggle/ablation-1c-focal-tversky-no-mosaic",
+  "title": "Ablation 1C: Focal Tversky + No Mosaic",
+  "code_file": "ablation_1c_focal_tversky_no_mosaic.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1",
+    "leoscode/wound-segmentation-images"
+  ],
+  "kernel_sources": []
+}

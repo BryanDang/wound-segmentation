@@ -1,0 +1,142 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Wound Segmentation Deep Learning Model with Clinical Validation"
+version: "1.0.0"
+date-released: "2025-01-20"
+url: "https://github.com/yourusername/wound-segmentation-model"
+repository-code: "https://github.com/yourusername/wound-segmentation-model"
+license: MIT
+abstract: |
+  A specialized YOLOv8-based deep learning system for automated wound segmentation
+  in clinical images. This capstone project focuses on clinical validation,
+  statistical rigor, and TinyML deployment optimization. The system fine-tunes
+  YOLOv8n-seg architecture using a compiled dataset of 2,760 wound images from
+  three validated sources, implementing custom Focal Tversky Loss and comprehensive
+  statistical analysis including Wilcoxon signed-rank tests, Bootstrap confidence
+  intervals, and Bonferroni corrections for multiple comparisons.
+
+keywords:
+  - wound segmentation
+  - deep learning
+  - computer vision
+  - YOLOv8
+  - clinical AI
+  - medical imaging
+  - TinyML
+  - web deployment
+  - statistical validation
+
+authors:
+  - family-names: "[Your Last Name]"
+    given-names: "[Your First Name]"
+    affiliation: "[Your Institution]"
+    email: "[Your Email]"
+    orcid: "https://orcid.org/[Your ORCID]"
+
+preferred-citation:
+  type: misc
+  title: "Wound Segmentation Deep Learning Model with Clinical Validation"
+  authors:
+    - family-names: "[Your Last Name]"
+      given-names: "[Your First Name]"
+      affiliation: "[Your Institution]"
+  year: 2025
+  url: "https://github.com/yourusername/wound-segmentation-model"
+  notes: "Capstone Project"
+
+references:
+  - type: dataset
+    title: "Stock pictures of wounds"
+    authors:
+      - family-names: "Thomas"
+        given-names: "S"
+    year: 2020
+    publisher: "Medetec Wound Database"
+    url: "http://www.medetec.co.uk/files/medetec-image-databases.html"
+    notes: "Medetec Wound Database - 374 images, research use only"
+
+  - type: article
+    title: "Fully automatic wound segmentation with deep convolutional neural networks"
+    authors:
+      - family-names: "Wang"
+        given-names: "C"
+      - family-names: "Anisuzzaman"
+        given-names: "DM"
+      - family-names: "Williamson"
+        given-names: "V"
+      - family-names: "Dhar"
+        given-names: "MK"
+      - family-names: "Rostami"
+        given-names: "B"
+      - family-names: "Niezgoda"
+        given-names: "J"
+      - family-names: "Gopalakrishnan"
+        given-names: "S"
+      - family-names: "Yu"
+        given-names: "Z"
+    journal: "Scientific Reports"
+    volume: 10
+    article-number: 21897
+    year: 2020
+    publisher: "Nature Publishing Group"
+    doi: "10.1038/s41598-020-78799-w"
+    url: "https://doi.org/10.1038/s41598-020-78799-w"
+    notes: "1,210 images - 1,010 specialist-annotated, 552 used for test set"
+
+  - type: conference-paper
+    title: "WSNet: Towards An Effective Method for Wound Image Segmentation"
+    authors:
+      - family-names: "Oota"
+        given-names: "SR"
+      - family-names: "Rowtula"
+        given-names: "V"
+      - family-names: "Mohammed"
+        given-names: "SK"
+      - family-names: "Galeru"
+        given-names: "V"
+      - family-names: "Liu"
+        given-names: "X"
+    conference:
+      name: "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)"
+    year: 2023
+    doi: "10.1109/WACV56688.2023.00325"
+    notes: "WSNet dataset - 1,176 images"
+
+  - type: article
+    title: "Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference"
+    authors:
+      - family-names: "Jacob"
+        given-names: "B"
+      - family-names: "Kligys"
+        given-names: "S"
+      - family-names: "Chen"
+        given-names: "B"
+      - family-names: "Zhu"
+        given-names: "M"
+      - family-names: "Tang"
+        given-names: "M"
+      - family-names: "Howard"
+        given-names: "A"
+      - family-names: "Adam"
+        given-names: "H"
+      - family-names: "Kalenichenko"
+        given-names: "D"
+    conference:
+      name: "IEEE Conference on Computer Vision and Pattern Recognition (CVPR)"
+    year: 2018
+    notes: "Referenced for quantization methodology in TinyML deployment"
+
+  - type: software
+    title: "YOLOv8"
+    authors:
+      - name: "Ultralytics"
+    year: 2023
+    url: "https://github.com/ultralytics/ultralytics"
+    notes: "Base architecture - YOLOv8n-seg variant used for wound segmentation"
+
+contact:
+  - family-names: "[Your Last Name]"
+    given-names: "[Your First Name]"
+    email: "[Your Email]"
+    affiliation: "[Your Institution]"

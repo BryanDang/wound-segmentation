@@ -1,0 +1,53 @@
+{
+  "created_timestamp": "2025-09-05T13:48:35.142220",
+  "updated_timestamp": "2025-09-24T21:23:04.581134",
+  "simulated_kaggle": true,
+  "kaggle_specs": {
+    "api_available": true,
+    "api_status": "Connected",
+    "credentials_path": "~/.kaggle/kaggle.json",
+    "project_credentials_path": ".kaggle/kaggle.json",
+    "expected_environment_vars": [
+      "KAGGLE_KERNEL_RUN_TYPE",
+      "KAGGLE_WORKING_DIR",
+      "KAGGLE_INPUT_DIR"
+    ],
+    "production_paths": {
+      "input_path": "/kaggle/input",
+      "working_path": "/kaggle/working",
+      "dataset_path": "/kaggle/input/wound-segmentation-images"
+    },
+    "dataset_info": {
+      "total_images": 2760,
+      "train_images": 2208,
+      "test_images": 552,
+      "splits": [
+        "train_images",
+        "train_masks",
+        "test_images",
+        "test_masks"
+      ]
+    }
+  },
+  "structure": {
+    "input_path": "simulated_kaggle_data/input",
+    "working_path": "simulated_kaggle_data/working",
+    "dataset_path": "simulated_kaggle_data/input/wound-segmentation-images"
+  },
+  "simulated_dataset_info": {
+    "total_images": 3,
+    "train_images": 2,
+    "test_images": 1,
+    "purpose": "Local development and testing with minimal dataset"
+  },
+  "dataset_copied": true,
+  "directories_created": [
+    "simulated_kaggle_data/input",
+    "simulated_kaggle_data/working",
+    "simulated_kaggle_data/input/wound-segmentation-images",
+    "simulated_kaggle_data/input/wound-segmentation-images/train_images",
+    "simulated_kaggle_data/input/wound-segmentation-images/train_masks",
+    "simulated_kaggle_data/input/wound-segmentation-images/test_images",
+    "simulated_kaggle_data/input/wound-segmentation-images/test_masks"
+  ]
+}

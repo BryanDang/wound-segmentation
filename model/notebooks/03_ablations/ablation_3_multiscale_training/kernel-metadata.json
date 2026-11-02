@@ -1,0 +1,15 @@
+{
+  "id": "bkdkaggle/ablation-3-multi-scale-training",
+  "title": "Ablation 3: Multi-Scale Training",
+  "code_file": "ablation_3_multiscale_training_clean.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "kernel_sources": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "bkdkaggle/ablation-5-minimal-diagnostic",
+  "title": "Ablation 5: Minimal Diagnostic (2-3 min)",
+  "code_file": "ablation_5_minimal_diagnostic.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs"
+  ],
+  "kernel_sources": []
+}

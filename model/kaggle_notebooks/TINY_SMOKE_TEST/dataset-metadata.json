@@ -1,0 +1,16 @@
+{
+  "title": "Tiny Wound Seg Smoke Test",
+  "id": "bkdkaggle/tiny-wound-seg-smoke-test",
+  "licenses": [
+    {
+      "name": "CC0-1.0"
+    }
+  ],
+  "keywords": [
+    "health",
+    "image segmentation",
+    "computer vision"
+  ],
+  "subtitle": "3-image dataset with exact baseline-outputs structure for ablation testing",
+  "description": "Minimal dataset (3 test + 3 train images) replicating exact baseline-outputs structure.\n\n**Purpose**: Smoke testing for ablation notebooks to catch path/extension bugs before GPU runs.\n\n**Structure**:\n```\ndata_wound_seg/\n├── train/\n│   ├── images/    (3 PNG)\n│   ├── masks/     (2 PNG) \n│   └── labels/    (2 TXT YOLO format)\n└── test/\n    ├── images/    (3 PNG)\n    ├── masks/     (3 PNG for evaluation)\n    └── labels/    (3 TXT YOLO format for training)\n```\n\n**Key Features**:\n- OK Exact same directory structure as baseline-outputs\n- OK Both YOLO .txt labels AND PNG masks in test/ (validates proper usage)\n- OK Fast validation (<30 seconds runtime)\n- OK Catches path, extension, and evaluation code bugs\n\n**Usage**: Replace `baseline-outputs` dataset with this in ablation notebooks for smoke testing."
+}

@@ -1,0 +1,17 @@
+{
+  "id": "bkdkaggle/ablation-5-label-smoothing",
+  "title": "Ablation 5: Label Smoothing",
+  "code_file": "ablation_5_label_smoothing.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

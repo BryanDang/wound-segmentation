@@ -1,0 +1,6 @@
+path: /kaggle/working
+train: train
+val: test
+
+names:
+  0: wound

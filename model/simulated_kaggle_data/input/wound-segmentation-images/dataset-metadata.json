@@ -1,0 +1,15 @@
+{
+  "title": "TINY Wound Segmentation - Smoke Test Dataset",
+  "id": "bkdkaggle/tiny-wound-seg-smoke-test",
+  "licenses": [
+    {
+      "name": "CC0-1.0"
+    }
+  ],
+  "keywords": [
+    "medicine",
+    "computer vision",
+    "image segmentation",
+    "testing"
+  ]
+}

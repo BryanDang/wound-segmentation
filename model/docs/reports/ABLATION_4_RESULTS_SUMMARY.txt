@@ -1,0 +1,156 @@
+ABLATION 4: HARD NEGATIVES MINING - RESULTS SUMMARY
+
+Date: 2025-10-20
+Kernel: bkdkaggle/ablation-4-unified-hard-negatives-3-strategies
+Status: partial results. Validation incomplete for 2 of 3 strategies.
+
+Later reports (ABLATION_4_ROOT_CAUSE_ANALYSIS.md, ABLATION_4_EMPTY_LABELS_CONCLUSIVE_ANSWER.md) attribute the missing 4b/4c metrics to 100% empty-label datasets. They give 4a as 87.51% +- 0.40%, versus 87.43% here.
+
+
+PERFORMANCE RESULTS
+
+Baseline (from previous ablations)
+  Mask mAP50: 80.00%
+  Source: baseline plus Focal Tversky (no improvement from FT)
+
+Strategy 4a: mixed training (FUSeg + Medetec + DDI), complete
+  Seed  42: 87.80% mAP50 | Precision 88.60% | Recall 81.40%
+  Seed 123: 87.10% mAP50 | Precision 88.80% | Recall 82.10%
+  Seed 456: 87.40% mAP50 | Precision 91.60% | Recall 80.70%
+  Mean: 87.43% +- 0.35% mAP50
+  Improvement: +7.43 percentage points vs baseline
+  Effect size: +9.29% relative improvement
+  Training time: ~56 min/seed (3 seeds = 168 min total)
+
+Strategy 4b: best checkpoint finetune (DDI only), no metrics
+  Training: completed (all 3 seeds)
+  Training time: ~2.4 min/seed (3 seeds = 7.2 min total)
+  Status: models trained, validation metrics not captured
+  Issue: logs show "Results saved" but no validation output
+
+Strategy 4c: last checkpoint finetune (DDI only), no metrics
+  Training: completed (all 3 seeds)
+  Training time: ~2.3 min/seed (3 seeds = 6.9 min total)
+  Status: models trained, validation metrics not captured
+  Issue: logs show "Results saved" but no validation output
+
+
+STATISTICAL ANALYSIS (strategy 4a only)
+
+4a vs baseline:
+  Delta mAP50: +7.43 percentage points
+  Cohen's d: ~21.2 (very large effect)
+  95% CI: [86.84%, 88.02%]
+  Significance: p < 0.001
+  Strong evidence for improvement
+
+Cross-seed consistency:
+  Standard deviation: 0.35% (very low)
+  Coefficient of variation: 0.4%
+  Extremely stable across seeds
+
+Pairwise comparisons:
+  4a vs 4b: cannot compute (4b metrics missing)
+  4a vs 4c: cannot compute (4c metrics missing)
+  4b vs 4c: cannot compute (both missing)
+  Bonferroni correction: not applicable without all data
+
+
+TRAINING EFFICIENCY
+
+Strategy 4a (full training): 56.0 min/seed x 3 seeds = 168 minutes total
+Strategy 4b (best finetune): 2.4 min/seed x 3 seeds = 7.2 minutes total (23x faster)
+Strategy 4c (last finetune): 2.3 min/seed x 3 seeds = 6.9 minutes total (24x faster)
+Total ablation runtime: 182.1 minutes (3.04 hours), all 9 models
+
+GPU efficiency:
+  Strategy 4a: 100% of time, complete results
+  Strategy 4b: 4% of time, no results
+  Strategy 4c: 4% of time, no results
+
+
+FINDINGS
+
+Known:
+1. 4a significantly improves over baseline (+7.4 points).
+2. Adding the DDI dataset to the training mix is beneficial.
+3. High precision (89.67%) and good recall (81.40%).
+4. Highly stable across random seeds.
+5. Training converged without issues.
+
+Unknown:
+1. Whether finetuning from best.pt (4b) improved results.
+2. Whether finetuning from last.pt (4c) improved results.
+3. Which strategy is best.
+4. Whether the 23x speedup of finetuning is worth a possible performance loss.
+5. Mixed training vs DDI-focused finetuning.
+
+Experimental gaps:
+1. 4b and 4c completed training but validation did not run.
+2. Likely cause: short training time or validation config issue.
+3. Impact: statistical comparison incomplete.
+4. Consequence: no fully informed ADOPT/MARGINAL/REJECT decision.
+
+
+OPTIONS
+
+Option 1: accept 4a and proceed (0 hours)
+  Adopt 4a on strong, seed-consistent results.
+  Update ABLATION_SPECIFICATIONS.md, proceed to ablation 5.
+  Trade-off: might miss a better strategy, incomplete experiment.
+
+Option 2: diagnostic validation (~30 min), recommended
+  Run standalone validation on the 4b/4c models.
+  Download weights, run validation script, compare.
+  Trade-off: minimal time, complete data, best balance.
+
+Option 3: complete rerun (~1-2 hours)
+  Rerun 4b/4c with forced validation.
+  Modify notebook, redeploy, execute with validation.
+  Trade-off: time-intensive, most rigorous.
+
+Recommended: option 2. Models already trained, validation is cheap, gives complete data for ablation 5.
+
+
+DECISION POINTS
+
+If 4b/4c are better than 4a: adopt finetuning for future ablations (faster and better).
+If 4b/4c are worse than 4a: continue with mixed training (slower but better).
+If 4b/4c are similar to 4a: choose by training time (7 min vs 168 min).
+Without 4b/4c metrics: default to 4a (only strategy with evidence).
+
+
+NEXT STEPS
+
+1. Download ablation 4 kernel output: done.
+2. Extract and analyze available metrics: done.
+3. Document findings and recommendations: done.
+4. Choose option 1, 2 or 3: open.
+5. Execute chosen option: open.
+6. Update ABLATION_SPECIFICATIONS.md with the final decision: open.
+7. Proceed to ablation 5 (test-time augmentation): open.
+
+
+FILES
+
+Analysis outputs:
+  model/kaggle_outputs/ablation_4_unified_20251020/ABLATION_4_ANALYSIS_REPORT.md (full technical report)
+  ABLATION_4_KEY_FINDINGS.md (decision-focused summary)
+  ABLATION_4_RESULTS_SUMMARY.txt (this file)
+  model/kaggle_outputs/ablation_4_unified_20251020/ablation_4_analysis.json (structured results data)
+
+Data sources:
+  completion_status.json (training metadata)
+  ablation-4-unified-hard-negatives-3-strategies.log (4MB training logs)
+
+
+METADATA
+
+Analysis completed: 2025-10-20
+Confidence:
+  Strategy 4a: high (complete data, consistent results)
+  Strategy 4b: none (no metrics)
+  Strategy 4c: none (no metrics)
+  Overall: medium (partial experiment, incomplete data)
+
+Based on: available performance data (4a), training time comparisons (all strategies), statistical analysis (4a vs baseline), experimental design practice, project timeline.

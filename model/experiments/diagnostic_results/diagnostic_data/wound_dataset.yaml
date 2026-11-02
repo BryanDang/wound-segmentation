@@ -1,0 +1,7 @@
+path: /kaggle/working/diagnostic_data
+train: train
+val: train
+test: train
+nc: 1
+names:
+  0: wound

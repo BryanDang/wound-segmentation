@@ -1,0 +1,19 @@
+{
+  "id": "bkdkaggle/ablation-4-unified-hard-negatives-3-strategies",
+  "title": "Ablation 4 Unified: Hard Negatives (3 Strategies)",
+  "code_file": "ablation_4_unified_hard_negatives.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1",
+    "bkdkaggle/ddi-diverse-dermatology",
+    "bkdkaggle/dermatology-data"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

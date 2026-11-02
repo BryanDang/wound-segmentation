@@ -1,0 +1,16 @@
+{
+  "id": "bkdkaggle/baseline-model-test",
+  "title": "Baseline Model Test",
+  "code_file": "02_baseline_model.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "leoscode/wound-segmentation-images",
+    "bkdkaggle/wound-seg-code-v1",
+    "bkdkaggle/wound-segmentation-eda-output"
+  ],
+  "kernel_sources": []
+}

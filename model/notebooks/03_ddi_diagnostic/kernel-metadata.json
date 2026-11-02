@@ -1,0 +1,18 @@
+{
+  "id": "bkdkaggle/ddi-diagnostic-validation",
+  "title": "DDI Dataset Diagnostic - Baseline Model Validation",
+  "code_file": "03_ddi_diagnostic_clean.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [
+    "bkdkaggle/ddi-diverse-dermatology",
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

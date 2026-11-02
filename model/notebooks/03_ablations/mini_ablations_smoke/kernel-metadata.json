@@ -1,0 +1,14 @@
+{
+  "id": "bkdkaggle/mini-ablations-comprehensive-smoke-test",
+  "title": "Mini Ablations Comprehensive Smoke Test",
+  "code_file": "mini_ablations_smoke_test.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/tiny-wound-seg-smoke-test"
+  ],
+  "kernel_sources": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "bkdkaggle/mini-ablation-2-no-color-smoke-test",
+  "title": "Mini-Ablation 2: No Color Augmentations - Smoke Test (CPU)",
+  "code_file": "2_no_color_smoke_test.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/wound-seg-code-v1",
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/tiny-wound-seg-smoke-test"
+  ],
+  "kernel_sources": []
+}

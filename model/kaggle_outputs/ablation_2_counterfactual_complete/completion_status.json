@@ -1,0 +1,11 @@
+{
+  "ablation": "2_counterfactual_mosaic_only",
+  "status": "complete",
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "variable_changed": "mosaic: 0.0 -> 1.0",
+  "all_other_params": "IDENTICAL to original Ablation 2"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "bkdkaggle/mini-ablation-6-clinical-conservative-smoke-test",
+  "title": "Mini-Ablation 6: Clinical Conservative - Smoke Test (CPU)",
+  "code_file": "6_clinical_conservative_smoke_test.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/wound-seg-code-v1",
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/tiny-wound-seg-smoke-test"
+  ],
+  "kernel_sources": []
+}

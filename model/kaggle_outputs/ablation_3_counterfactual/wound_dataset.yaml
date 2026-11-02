@@ -1,0 +1,7 @@
+path: /kaggle/input/baseline-outputs/data_wound_seg
+train: train
+val: test
+test: test
+nc: 1
+names:
+  0: wound

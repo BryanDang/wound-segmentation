@@ -1,0 +1,7 @@
+path: /kaggle/input/tiny-wound-seg-smoke-test
+train: train/images
+val: test/images
+
+names:
+  0: background
+  1: wound

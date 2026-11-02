@@ -1,0 +1,20 @@
+{
+  "id": "bkdkaggle/ablation-3-counterfactual-smoke-v2",
+  "title": "Ablation 3 Counterfactual Smoke v2",
+  "code_file": "ablation_3_counterfactual_smoke.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "bkdkaggle/tiny-wound-seg-smoke-test",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "keywords": [
+    "ablation",
+    "smoke-test",
+    "yolov8",
+    "counterfactual"
+  ]
+}

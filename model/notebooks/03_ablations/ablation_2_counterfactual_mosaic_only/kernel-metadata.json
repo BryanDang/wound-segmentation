@@ -1,0 +1,17 @@
+{
+  "id": "bkdkaggle/ablation-2-counterfactual-mosaic-only",
+  "title": "Ablation 2 Counterfactual Mosaic Only",
+  "code_file": "ablation_2_counterfactual_mosaic_only.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "enable_tpu": false,
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

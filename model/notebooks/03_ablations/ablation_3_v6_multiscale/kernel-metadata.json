@@ -1,0 +1,16 @@
+{
+  "id": "bkdkaggle/ablation-3-v6-multi-scale-complete-zero-aug",
+  "title": "Ablation 3 v6: Multi-Scale (Complete Zero-Aug)",
+  "code_file": "ablation_3_v6_multiscale.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

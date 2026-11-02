@@ -1,0 +1,16 @@
+{
+  "id": "bkdkaggle/mini-ablation-4-minimal-smoke-test",
+  "title": "Mini-Ablation 4: Minimal (Mosaic+Flip Only) - Smoke Test (CPU)",
+  "code_file": "4_minimal_smoke_test.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/wound-seg-code-v1",
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/tiny-wound-seg-smoke-test"
+  ],
+  "kernel_sources": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "bkdkaggle/mini-ablations-production-all-7-configs",
+  "title": "Mini-Ablations Production (All 7 Configs)",
+  "code_file": "mini_ablations_production.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1",
+    "leoscode/wound-segmentation-images"
+  ],
+  "kernel_sources": []
+}

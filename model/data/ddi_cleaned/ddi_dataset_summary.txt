@@ -1,0 +1,107 @@
+DDI (Diverse Dermatology Images) Dataset - Cleaned Version
+================================================================================
+
+Source: bkdkaggle/ddi-diverse-dermatology (Kaggle)
+Cleaned: Removed 14 metadata entries with missing image files
+
+Total Images: 642
+Unique Diseases: 78
+Malignant Cases: 162 (25.2%)
+Benign Cases: 480 (74.8%)
+Skin Tones: [56, 12, 34]
+
+Removed Files (14 total):
+  - 000045.png (ID 45: melanoma-acral-lentiginous)
+  - 000067.png (ID 67: abrasions-ulcerations-and-physical-injuries)
+  - 000230.png (ID 230: pyogenic-granuloma)
+  - 000249.png (ID 249: abrasions-ulcerations-and-physical-injuries)
+  - 000333.png (ID 333: prurigo-nodularis)
+  - 000354.png (ID 354: pyogenic-granuloma)
+  - 000484.png (ID 484: basal-cell-carcinoma)
+  - 000485.png (ID 485: squamous-cell-carcinoma)
+  - 000494.png (ID 494: squamous-cell-carcinoma-in-situ)
+  - 000521.png (ID 521: squamous-cell-carcinoma-in-situ)
+  - 000557.png (ID 557: basal-cell-carcinoma)
+  - 000581.png (ID 581: squamous-cell-carcinoma)
+  - 000582.png (ID 582: basal-cell-carcinoma)
+  - 000596.png (ID 596: squamous-cell-carcinoma)
+
+Disease Distribution:
+  - melanocytic-nevi: 119
+  - seborrheic-keratosis: 58
+  - verruca-vulgaris: 50
+  - basal-cell-carcinoma: 38
+  - epidermal-cyst: 35
+  - mycosis-fungoides: 32
+  - squamous-cell-carcinoma-in-situ: 26
+  - dermatofibroma: 22
+  - acrochordon: 19
+  - dysplastic-nevus: 16
+  - seborrheic-keratosis-irritated: 14
+  - squamous-cell-carcinoma: 14
+  - neurofibroma: 12
+  - pyogenic-granuloma: 12
+  - angioma: 11
+  - eccrine-poroma: 10
+  - squamous-cell-carcinoma-keratoacanthoma: 8
+  - melanoma: 7
+  - kaposi-sarcoma: 6
+  - nevus-lipomatosus-superficialis: 6
+  - molluscum-contagiosum: 6
+  - melanoma-in-situ: 6
+  - melanoma-acral-lentiginous: 6
+  - basal-cell-carcinoma-nodular: 6
+  - blue-nevus: 6
+  - lipoma: 6
+  - metastatic-carcinoma: 5
+  - inverted-follicular-keratosis: 5
+  - actinic-keratosis: 4
+  - prurigo-nodularis: 4
+  - eczema-spongiotic-dermatitis: 4
+  - solar-lentigo: 4
+  - hyperpigmentation: 3
+  - arteriovenous-hemangioma: 3
+  - benign-keratosis: 3
+  - trichilemmoma: 3
+  - trichofolliculoma: 2
+  - acquired-digital-fibrokeratoma: 2
+  - foreign-body-granuloma: 2
+  - onychomycosis: 2
+  - scar: 2
+  - syringocystadenoma-papilliferum: 2
+  - fibrous-papule: 2
+  - condyloma-accuminatum: 2
+  - basal-cell-carcinoma-superficial: 2
+  - graft-vs-host-disease: 2
+  - xanthogranuloma: 2
+  - glomangioma: 1
+  - cellular-neurothekeoma: 1
+  - lichenoid-keratosis: 1
+  - reactive-lymphoid-hyperplasia: 1
+  - blastic-plasmacytoid-dendritic-cell-neoplasm: 1
+  - clear-cell-acanthoma: 1
+  - coccidioidomycosis: 1
+  - leukemia-cutis: 1
+  - sebaceous-carcinoma: 1
+  - abscess: 1
+  - chondroid-syringoma: 1
+  - dermatomyositis: 1
+  - tinea-pedis: 1
+  - epidermal-nevus: 1
+  - pigmented-spindle-cell-nevus-of-reed: 1
+  - focal-acral-hyperkeratosis: 1
+  - abrasions-ulcerations-and-physical-injuries: 1
+  - wart: 1
+  - lymphocytic-infiltrations: 1
+  - angioleiomyoma: 1
+  - keloid: 1
+  - hematoma: 1
+  - subcutaneous-t-cell-lymphoma: 1
+  - nodular-melanoma-(nm): 1
+  - folliculitis: 1
+  - atypical-spindle-cell-nevus-of-reed: 1
+  - acne-cystic: 1
+  - verruciform-xanthoma: 1
+  - morphea: 1
+  - neuroma: 1
+  - acral-melanotic-macule: 1

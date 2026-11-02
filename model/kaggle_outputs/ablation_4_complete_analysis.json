@@ -1,0 +1,156 @@
+{
+  "baseline_map50": 0.8,
+  "strategies": {
+    "4a": {
+      "name": "Strategy 4a: Mixed Training (Full Dataset)",
+      "mean_map50": 0.8751066666666666,
+      "std_map50": 0.0039661862454167885,
+      "mean_precision": 0.8998733333333333,
+      "std_precision": 0.01992314566862709,
+      "mean_recall": 0.8075866666666668,
+      "std_recall": 0.018013998260612046,
+      "improvement_pp": 7.510666666666655,
+      "individual_results": [
+        0.87855,
+        0.87077,
+        0.876
+      ]
+    },
+    "4b": {
+      "name": "Strategy 4b: Best Checkpoint Finetune (DDI only)",
+      "mean_map50": 0.0,
+      "std_map50": 0.0,
+      "mean_precision": 0.0,
+      "std_precision": 0.0,
+      "mean_recall": 0.0,
+      "std_recall": 0.0,
+      "improvement_pp": -80.0,
+      "individual_results": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "4c": {
+      "name": "Strategy 4c: Last Checkpoint Finetune (DDI only)",
+      "mean_map50": 0.0,
+      "std_map50": 0.0,
+      "mean_precision": 0.0,
+      "std_precision": 0.0,
+      "mean_recall": 0.0,
+      "std_recall": 0.0,
+      "improvement_pp": -80.0,
+      "individual_results": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "individual_results": {
+    "4a_42": {
+      "strategy": "4a",
+      "seed": 42,
+      "best_epoch": 58,
+      "mask_mAP50": 0.87855,
+      "mask_precision": 0.88574,
+      "mask_recall": 0.8143,
+      "mask_mAP50_95": 0.60687,
+      "box_mAP50": 0.87706,
+      "training_time_min": 50.10333333333333
+    },
+    "4a_123": {
+      "strategy": "4a",
+      "seed": 123,
+      "best_epoch": 45,
+      "mask_mAP50": 0.87077,
+      "mask_precision": 0.89122,
+      "mask_recall": 0.82128,
+      "mask_mAP50_95": 0.60162,
+      "box_mAP50": 0.86771,
+      "training_time_min": 39.42383333333333
+    },
+    "4a_456": {
+      "strategy": "4a",
+      "seed": 456,
+      "best_epoch": 53,
+      "mask_mAP50": 0.876,
+      "mask_precision": 0.92266,
+      "mask_recall": 0.78718,
+      "mask_mAP50_95": 0.60925,
+      "box_mAP50": 0.87139,
+      "training_time_min": 46.501
+    },
+    "4b_42": {
+      "strategy": "4b",
+      "seed": 42,
+      "best_epoch": 1,
+      "mask_mAP50": 0.0,
+      "mask_precision": 0.0,
+      "mask_recall": 0.0,
+      "mask_mAP50_95": 0.0,
+      "box_mAP50": 0.0,
+      "training_time_min": 0.19693333333333335
+    },
+    "4b_123": {
+      "strategy": "4b",
+      "seed": 123,
+      "best_epoch": 1,
+      "mask_mAP50": 0.0,
+      "mask_precision": 0.0,
+      "mask_recall": 0.0,
+      "mask_mAP50_95": 0.0,
+      "box_mAP50": 0.0,
+      "training_time_min": 0.20395833333333335
+    },
+    "4b_456": {
+      "strategy": "4b",
+      "seed": 456,
+      "best_epoch": 1,
+      "mask_mAP50": 0.0,
+      "mask_precision": 0.0,
+      "mask_recall": 0.0,
+      "mask_mAP50_95": 0.0,
+      "box_mAP50": 0.0,
+      "training_time_min": 0.195745
+    },
+    "4c_42": {
+      "strategy": "4c",
+      "seed": 42,
+      "best_epoch": 1,
+      "mask_mAP50": 0.0,
+      "mask_precision": 0.0,
+      "mask_recall": 0.0,
+      "mask_mAP50_95": 0.0,
+      "box_mAP50": 0.0,
+      "training_time_min": 0.19255000000000003
+    },
+    "4c_123": {
+      "strategy": "4c",
+      "seed": 123,
+      "best_epoch": 1,
+      "mask_mAP50": 0.0,
+      "mask_precision": 0.0,
+      "mask_recall": 0.0,
+      "mask_mAP50_95": 0.0,
+      "box_mAP50": 0.0,
+      "training_time_min": 0.19946
+    },
+    "4c_456": {
+      "strategy": "4c",
+      "seed": 456,
+      "best_epoch": 1,
+      "mask_mAP50": 0.0,
+      "mask_precision": 0.0,
+      "mask_recall": 0.0,
+      "mask_mAP50_95": 0.0,
+      "box_mAP50": 0.0,
+      "training_time_min": 0.205695
+    }
+  },
+  "ranking": [
+    "4a",
+    "4b",
+    "4c"
+  ]
+}

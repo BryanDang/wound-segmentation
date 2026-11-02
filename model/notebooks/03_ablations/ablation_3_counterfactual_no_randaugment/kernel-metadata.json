@@ -1,0 +1,18 @@
+{
+  "id": "bkdkaggle/ablation-3-counterfactual-no-randaugment",
+  "title": "Ablation 3 Counterfactual: Multi-Scale WITHOUT RandAugment",
+  "code_file": "ablation_3_counterfactual_no_randaugment.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": [
+    "bkdkaggle/baseline-outputs",
+    "bkdkaggle/wound-seg-code-v1"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
